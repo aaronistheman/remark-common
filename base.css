@@ -23,7 +23,7 @@ html {
     word-break: break-all;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-weight: normal;
 }
 
@@ -90,7 +90,7 @@ h1 {
     border-bottom: 1px solid var(--ucd-gold-100);
     color: var(--ucd-blue-100);
 }
-h2, h3, h4 {
+h2, h3, h4, h5 {
     margin-top: 0.0em;
     margin-bottom: 0.1em;
     color: var(--ucd-blue-80);
@@ -165,6 +165,10 @@ blockquote {
 
 /* Comments */
 .comment { display: none }
+
+.center { text-align: center }
+
+.line-through { text-decoration: line-through; }
 
 /*
  * Presenter mode
