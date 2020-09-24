@@ -14,6 +14,7 @@ ifeq (,$(shell command -v $(TPAGE) 2>/dev/null))
 $(error Could not find executable '$(TPAGE)' in PATH. \
 	You probably want to install the Perl Template Toolkit)
 endif
+CHROMIUM := chromium-browser
 
 ## Find all files under a directory
 find_files = $(shell find $(1) -type f 2>/dev/null)
@@ -86,7 +87,7 @@ pdf: print $(pdf)
 
 ## HTML to pdf rule
 quiet_cmd_pdfgen = PDF $@
-      cmd_pdfgen = chromium --headless --disable-gpu \
+      cmd_pdfgen = $(CHROMIUM) --headless --disable-gpu \
 				  --print-to-pdf=$@ \
 				  file://$(abspath $<) \
 				  2>/dev/null
