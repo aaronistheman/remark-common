@@ -13,26 +13,30 @@
                 <link rel="stylesheet" href="[% File.path %]">
         [% CATCH %]
         [% END %]
+    </head>
+
+    <body>
+        <textarea id="source">
+[% PROCESS content %]
+        </textarea>
 
         <!-- Scripts loading -->
-        <script defer src="[% common %]/vendor/remark/remark.min.js"></script>
+        <script src="[% common %]/vendor/remark/remark.min.js"></script>
 
-        <script defer src="[% common %]/vendor/katex/katex.min.js"></script>
-        <script defer src="[% common %]/vendor/katex/contrib/auto-render.min.js"></script>
+        <script src="[% common %]/vendor/katex/katex.min.js"></script>
+        <script src="[% common %]/vendor/katex/contrib/auto-render.min.js"></script>
 
-        <script defer src="[% common %]/highlightjs/gdb.js"></script>
-        <script defer src="[% common %]/highlightjs/makefile.js"></script>
-        <script defer src="[% common %]/highlightjs/terminal.js"></script>
+        <script src="[% common %]/highlightjs/gdb.js"></script>
+        <script src="[% common %]/highlightjs/makefile.js"></script>
+        <script src="[% common %]/highlightjs/terminal.js"></script>
 
-        <script defer src="[% common %]/remark/filename.js"></script>
-        <script defer src="[% common %]/remark/flush.js"></script>
-        <script defer src="[% common %]/remark/newline.js"></script>
-        <script defer src="[% common %]/remark/scale.js"></script>
+        <script src="[% common %]/remark/filename.js"></script>
+        <script src="[% common %]/remark/flush.js"></script>
+        <script src="[% common %]/remark/newline.js"></script>
+        <script src="[% common %]/remark/scale.js"></script>
 
         <!-- Slides processing -->
         <script type="text/javascript">
-            function slides_process()
-            {
                 var remark_opts = {
                     /* Default language for syntax highlighting */
                     highlightLanguage: 'terminal',
@@ -56,14 +60,7 @@
                 }
 
                 var slideshow = remark.create(remark_opts, katex_render);
-            }
         </script>
-    </head>
-
-    <body onload="slides_process()">
-        <textarea id="source">
-[% PROCESS content %]
-        </textarea>
     </body>
 </html>
 
